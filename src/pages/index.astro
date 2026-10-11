@@ -1,0 +1,227 @@
+---
+// src/pages/index.astro
+const title = "BySoftLabs - Reglas";
+---
+
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{title}</title>
+  </head>
+  <body>
+    <!-- Barra de Navegación Superior -->
+    <header class="navbar">
+      <div class="nav-container">
+        <div class="logo-group">
+          <span class="logo">BySoftLabs</span>
+          <span class="version-badge">v0.1-alpha</span>
+        </div>
+        <nav class="nav-links">
+          <a href="/wargames">Wargames</a>
+          <a href="/" class="active">Reglas</a>
+          <a href="/informacion">Información</a>
+        </nav>
+      </div>
+    </header>
+
+    <!-- Contenido Principal -->
+    <main class="content">
+      <h1>Reglas</h1>
+      
+      <p class="intro">
+        El objetivo de los juegos de BySoftLabs es proporcionar recursos educativos a personas dispuestas a aprender sobre ciberseguridad. La comunidad de BySoftLabs aloja estos recursos de forma gratuita para que los jugadores los utilicen y aprendan de ellos. Sin embargo, el uso de estos recursos conlleva algunas reglas sencillas.
+      </p>
+
+      <!-- Sección 1 -->
+      <section>
+        <h2><span class="hashtag">#</span> En general</h2>
+        <ol>
+          <li><strong>Trata a todos con respeto.</strong> No toleraremos ninguna forma de acoso o discriminación.</li>
+          <li><strong>No permitimos spam ni autopromoción no solicitada</strong> en las salas de chat o mensajes privados.</li>
+          <li><strong>No arruines el juego</strong> para los demás. Si necesitas ayuda en el chat, especifica el juego y el nivel, y alguien te ayudará en mensajes privados. No confíes en la funcionalidad <code class="tag">/spoiler</code> de Discord, ya que las salas de chat están conectadas a IRC, donde esta funcionalidad no está disponible.</li>
+          <li>No utilices nombres de archivos o directorios fáciles de adivinar y <strong>limpia lo que hagas</strong>. Si has creado archivos o directorios, elimínalos cuando termines.</li>
+        </ol>
+      </section>
+
+      <!-- Sección 2 -->
+      <section>
+        <h2><span class="hashtag">#</span> Para educadores y creadores de contenido</h2>
+        <ol>
+          <li><strong>No publiques credenciales</strong> de ninguno de los juegos. Entendemos la necesidad de crear guías, tutoriales y soluciones, pero no publiques ninguna credencial.</li>
+          <li>Si obtienes beneficios con el contenido que creas y puedes permitírtelo, <strong>por favor considera donar</strong> una parte de tus ganancias a la comunidad. Somos una comunidad de voluntarios que depende de las donaciones para mantener el proyecto en marcha.</li>
+          <li><strong>Da crédito a quien corresponda.</strong> Si utilizas contenido de los juegos de la plataforma, menciona a la comunidad de BySoftLabs y proporciona un enlace a nuestro sitio web.</li>
+        </ol>
+      </section>
+
+      <!-- Sección 3 -->
+      <section>
+        <h2><span class="hashtag">#</span> Información legal</h2>
+        <p class="legal-text">Copyright (c) 2007-2026 BySoftLabs. Todos los derechos reservados.</p>
+        <p class="legal-text">
+          Todo el contenido de esta plataforma, incluidas las descripciones de los desafíos, archivos binarios, configuraciones del sistema, estructura de los cursos y materiales instructivos, es propiedad intelectual de BySoftLabs o de los autores individuales acreditados. Queda prohibida la redistribución o reutilización sin autorización por escrito.
+        </p>
+      </section>
+    </main>
+  </body>
+</html>
+
+<style>
+  /* Variables temáticas oscuras estilo terminal / ciberseguridad */
+  :root {
+    --bg-color: #0b0d0e;
+    --text-color: #c9d1d9;
+    --text-heading: #ffffff;
+    --accent-green: #3fb950;
+    --accent-badge-bg: rgba(63, 185, 80, 0.15);
+    --border-color: #21262d;
+    --code-bg: #161b22;
+  }
+
+  /* Resets globales */
+  * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+
+  body {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+    line-height: 1.6;
+    min-height: 100vh;
+  }
+
+  /* Navegación */
+  .navbar {
+    width: 100%;
+    border-bottom: 1px solid var(--border-color);
+    background-color: var(--bg-color);
+  }
+
+  .nav-container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 1rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .logo-group {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+  }
+
+  .logo {
+    font-weight: 700;
+    font-size: 1.1rem;
+    color: var(--text-heading);
+    letter-spacing: -0.3px;
+  }
+
+  .version-badge {
+    color: var(--accent-green);
+    background-color: var(--accent-badge-bg);
+    border: 1px solid rgba(63, 185, 80, 0.4);
+    font-size: 0.72rem;
+    font-family: monospace;
+    padding: 0.1rem 0.4rem;
+    border-radius: 4px;
+  }
+
+  .nav-links {
+    display: flex;
+    gap: 1.5rem;
+  }
+
+  .nav-links a {
+    color: #8b949e;
+    text-decoration: none;
+    font-size: 0.9rem;
+    transition: color 0.2s ease;
+  }
+
+  .nav-links a:hover {
+    color: var(--text-color);
+  }
+
+  .nav-links a.active {
+    color: var(--text-heading);
+    font-weight: 500;
+  }
+
+  /* Contenido principal */
+  .content {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 3rem 2rem 5rem;
+  }
+
+  h1 {
+    font-size: 2.2rem;
+    color: var(--text-heading);
+    margin-bottom: 1.5rem;
+    font-weight: 700;
+  }
+
+  .intro {
+    font-size: 0.95rem;
+    color: #8b949e;
+    margin-bottom: 2.5rem;
+  }
+
+  section {
+    margin-bottom: 2.5rem;
+  }
+
+  h2 {
+    font-size: 1.25rem;
+    color: var(--text-heading);
+    margin-bottom: 1rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+
+  .hashtag {
+    color: var(--accent-green);
+    font-family: monospace;
+    font-weight: 700;
+  }
+
+  ol {
+    padding-left: 1.2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
+    font-size: 0.92rem;
+  }
+
+  li {
+    color: var(--text-color);
+  }
+
+  strong {
+    color: var(--text-heading);
+  }
+
+  code.tag {
+    background-color: var(--code-bg);
+    color: var(--accent-green);
+    border: 1px solid var(--border-color);
+    padding: 0.1rem 0.4rem;
+    border-radius: 4px;
+    font-family: monospace;
+    font-size: 0.85rem;
+  }
+
+  .legal-text {
+    font-size: 0.88rem;
+    color: #8b949e;
+    margin-bottom: 0.8rem;
+  }
+</style>
